@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "ce39e57b-cf9d-4443-bb57-f705dcfebda9",
+		"name": "LocalHost",
+		"description": "Testowanie Api na produkcji",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8080/_ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/v1.0/_ping",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0",
+						"_ping"
+					]
+				},
+				"description": "Sprawdzenie, czy kontener działa\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/kill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89/kill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"1382d9a4dc89",
+						"kill"
+					]
+				},
+				"description": "Zabijanie kontenera."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/restart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89/kill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"1382d9a4dc89",
+						"kill"
+					]
+				},
+				"description": "Restartowanie kontenerów."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/pause",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/v1.0/containers/7d96632c681b/pause",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0",
+						"containers",
+						"7d96632c681b",
+						"pause"
+					]
+				},
+				"description": "Pauzowanie kontenerów."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/unpause",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89/unpause",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"1382d9a4dc89",
+						"unpause"
+					]
+				},
+				"description": "Wznawianie kontenerów."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"1382d9a4dc89"
+					]
+				},
+				"description": "Usuwanie kontenerów."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/_ping",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"_ping"
+					]
+				},
+				"description": "Pobieranie statystyk o serwerze"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/prune",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/prune",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"prune"
+					]
+				},
+				"description": "Usuwanie zatrzymanych kontenerów"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/images/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/images/json",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"json"
+					]
+				},
+				"description": "Zwraca listę obrazów na serwerze."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/json?all=1&limit=90&filters",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"json"
+					],
+					"query": [
+						{
+							"key": "all",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "90"
+						},
+						{
+							"key": "filters",
+							"value": null
+						}
+					]
+				},
+				"description": "Zwraca konfiguracje z listy pojemników."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/81d780c60229/json",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"81d780c60229",
+						"json"
+					]
+				},
+				"description": "Zwraca konfiguracje z pojemnika."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/81d780c60229/logs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"81d780c60229",
+						"logs"
+					]
+				},
+				"description": "Zwraca logi z kontenera."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/top",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/81d780c60229/top?ps_args",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"81d780c60229",
+						"top"
+					],
+					"query": [
+						{
+							"key": "ps_args",
+							"value": ""
+						}
+					]
+				},
+				"description": "Zwraca ilość procesów w kontenerze."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/exec",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/v1.0/containers/81d780c60229/exec?path=/etc/supervisor/conf.d/exec.sh&argument=firefox www.google.pl",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0",
+						"containers",
+						"81d780c60229",
+						"exec"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/etc/supervisor/conf.d/exec.sh"
+						},
+						{
+							"key": "argument",
+							"value": "firefox www.google.pl"
+						}
+					]
+				},
+				"description": "Wykonywanie dowolnego polecenia w kontenerze"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Image\": \"srv:1.5\",\r\n  \"ExposedPorts\": {\r\n    \"8080/tcp\": {}\r\n  },\r\n  \"HostConfig\": {\r\n    \"PortBindings\": {\r\n      \"8080/tcp\": [\r\n        {\r\n          \"HostPort\": \"8081\"\r\n        }\r\n      ]\r\n    },\r\n    \"RestartPolicy\": {\r\n      \"Name\": \"always\"\r\n    }\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/v1.0/containers/create?name",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0",
+						"containers",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null
+						}
+					]
+				},
+				"description": "Tworzenie nowego kontenera."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/start",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/v1.0/containers/1382d9a4dc8930bd43d8b1061d138a3e27c53359b5a016897d5c25b4032af2d8/start",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0",
+						"containers",
+						"1382d9a4dc8930bd43d8b1061d138a3e27c53359b5a016897d5c25b4032af2d8",
+						"start"
+					]
+				},
+				"description": "Uruchomienie kontenera."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/containers/{id}/stop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/containers/81d780c60229/stop",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"containers",
+						"81d780c60229",
+						"stop"
+					]
+				},
+				"description": "Zatrzymanie kontenera."
+			},
+			"response": []
+		}
+	]
+}
