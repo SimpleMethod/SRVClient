@@ -170,7 +170,7 @@ public class ConnectionAPI {
         String[] returnArray = new String[3];
         try {
             HttpResponse<JsonNode> containersResponse = Unirest.delete(DOCKER_SOCKET + "/containers/" + id)
-                   .header("Content-Type", "application/json").queryString("v", true).queryString("force", true).queryString("link", true).asJson();
+                   .header("Content-Type", "application/json").queryString("v", false).queryString("force", true).queryString("link", false).asJson();
             returnArray[0] = String.valueOf(containersResponse.getStatus());
             returnArray[1] = containersResponse.getHeaders().toString();
             if (containersResponse.getBody() != null) {
