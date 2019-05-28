@@ -1,22 +1,18 @@
 {
 	"info": {
-		"_postman_id": "ce39e57b-cf9d-4443-bb57-f705dcfebda9",
-		"name": "LocalHost",
-		"description": "Testowanie Api na produkcji",
+		"_postman_id": "48753a2a-f5d3-43e7-8ab7-78a8e5d14ed9",
+		"name": "Internal SRV API",
+		"description": "Internal API of the SRV project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://127.0.0.1:8080/_ping",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/_ping",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/v1.0/_ping",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/_ping",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -26,16 +22,15 @@
 					],
 					"port": "8080",
 					"path": [
-						"v1.0",
 						"_ping"
 					]
 				},
-				"description": "Sprawdzenie, czy kontener działa\n"
+				"description": "Checking if the server is working"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/kill",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -44,27 +39,28 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89/kill",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"1382d9a4dc89",
+						":id",
 						"kill"
 					]
 				},
-				"description": "Zabijanie kontenera."
+				"description": "Removal of the container"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/restart",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/restart",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -73,27 +69,28 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89/kill",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"1382d9a4dc89",
+						":id",
 						"kill"
 					]
 				},
-				"description": "Restartowanie kontenerów."
+				"description": "Container restarting"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/pause",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/pause",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -102,7 +99,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/v1.0/containers/7d96632c681b/pause",
+					"raw": "http://127.0.0.1:8080/v1.0/containers/:id/pause",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -114,16 +111,16 @@
 					"path": [
 						"v1.0",
 						"containers",
-						"7d96632c681b",
+						":id",
 						"pause"
 					]
 				},
-				"description": "Pauzowanie kontenerów."
+				"description": "Pause the container"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/unpause",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/unpause",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -132,7 +129,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89/unpause",
+					"raw": "http://127.0.0.1:8080/containers/:id/unpause",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -143,16 +140,16 @@
 					"port": "8080",
 					"path": [
 						"containers",
-						"1382d9a4dc89",
+						":id",
 						"unpause"
 					]
 				},
-				"description": "Wznawianie kontenerów."
+				"description": "Unpause the container"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -161,33 +158,30 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/1382d9a4dc89",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"1382d9a4dc89"
+						":id"
 					]
 				},
-				"description": "Usuwanie kontenerów."
+				"description": "Deleting containers"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/stats",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stats",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "http://127.0.0.1:8080/_ping",
 					"protocol": "http",
@@ -202,12 +196,12 @@
 						"_ping"
 					]
 				},
-				"description": "Pobieranie statystyk o serwerze"
+				"description": "Return of statistics about containers"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/prune",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/prune",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -216,35 +210,32 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/prune",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/prune",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
 						"prune"
 					]
 				},
-				"description": "Usuwanie zatrzymanych kontenerów"
+				"description": "Deleting frozen containers"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/images/json",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/images/json",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/images/json",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/images/json",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -258,30 +249,27 @@
 						"json"
 					]
 				},
-				"description": "Zwraca listę obrazów na serwerze."
+				"description": "Returns a list of images on the SRV server"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/json",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/json",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/json?all=1&limit=90&filters",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/json?all=1&limit=90&filters",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
 						"json"
 					],
@@ -300,90 +288,81 @@
 						}
 					]
 				},
-				"description": "Zwraca konfiguracje z listy pojemników."
+				"description": "Returns the configuration of the list of containers"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/json",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:ID/json",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/81d780c60229/json",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/json",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"81d780c60229",
+						":id",
 						"json"
 					]
 				},
-				"description": "Zwraca konfiguracje z pojemnika."
+				"description": "Returns configurations from a container"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/logs",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/logs",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/81d780c60229/logs",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/logs",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"81d780c60229",
+						":id",
 						"logs"
 					]
 				},
-				"description": "Zwraca logi z kontenera."
+				"description": "Returns logs from a container"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/top",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/top",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/81d780c60229/top?ps_args",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/top?ps_args=",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"81d780c60229",
+						":id",
 						"top"
 					],
 					"query": [
@@ -393,12 +372,12 @@
 						}
 					]
 				},
-				"description": "Zwraca ilość procesów w kontenerze."
+				"description": "Returns the number of processes in a container."
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/exec",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/exec",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -407,19 +386,19 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/v1.0/containers/81d780c60229/exec?path=/etc/supervisor/conf.d/exec.sh&argument=firefox www.google.pl",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/exec?path=/etc/supervisor/conf.d/exec.sh&argument=firefox www.google.pl",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
 						"v1.0",
 						"containers",
-						"81d780c60229",
+						":id",
 						"exec"
 					],
 					"query": [
@@ -433,12 +412,12 @@
 						}
 					]
 				},
-				"description": "Wykonywanie dowolnego polecenia w kontenerze"
+				"description": "Execution of any command in a container"
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/create",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/create",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -454,15 +433,15 @@
 					"raw": "{\r\n  \"Image\": \"srv:1.5\",\r\n  \"ExposedPorts\": {\r\n    \"8080/tcp\": {}\r\n  },\r\n  \"HostConfig\": {\r\n    \"PortBindings\": {\r\n      \"8080/tcp\": [\r\n        {\r\n          \"HostPort\": \"8081\"\r\n        }\r\n      ]\r\n    },\r\n    \"RestartPolicy\": {\r\n      \"Name\": \"always\"\r\n    }\r\n  }\r\n}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/v1.0/containers/create?name",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/create?name",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
 						"v1.0",
 						"containers",
@@ -475,12 +454,12 @@
 						}
 					]
 				},
-				"description": "Tworzenie nowego kontenera."
+				"description": "Creating a new container."
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/start",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/start",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -489,28 +468,28 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/v1.0/containers/1382d9a4dc8930bd43d8b1061d138a3e27c53359b5a016897d5c25b4032af2d8/start",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/start",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
 						"v1.0",
 						"containers",
-						"1382d9a4dc8930bd43d8b1061d138a3e27c53359b5a016897d5c25b4032af2d8",
+						":id",
 						"start"
 					]
 				},
-				"description": "Uruchomienie kontenera."
+				"description": "Launching the container."
 			},
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/containers/{id}/stop",
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stop",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -519,22 +498,46 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/81d780c60229/stop",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stop",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"145",
+						"239",
+						"31",
+						"229"
 					],
-					"port": "8080",
+					"port": "4815",
 					"path": [
+						"v1.0",
 						"containers",
-						"81d780c60229",
+						":id",
 						"stop"
 					]
 				},
-				"description": "Zatrzymanie kontenera."
+				"description": "Stopping of the container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/info",
+					"protocol": "http",
+					"host": [
+						"145",
+						"239",
+						"31",
+						"229"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"info"
+					]
+				}
 			},
 			"response": []
 		}
