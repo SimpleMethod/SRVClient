@@ -1,545 +1,605 @@
 {
-"info": {
-"_postman_id": "48753a2a-f5d3-43e7-8ab7-78a8e5d14ed9",
-"name": "Internal SRV API",
-"description": "Internal API of the SRV project",
-"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-},
-"item": [
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/_ping",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/_ping",
-"protocol": "http",
-"host": [
-"127",
-"0",
-"0",
-"1"
-],
-"port": "8080",
-"path": [
-"_ping"
-]
-},
-"description": "Checking if the server is working"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"kill"
-]
-},
-"description": "Removal of the container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/restart",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"kill"
-]
-},
-"description": "Container restarting"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/pause",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/pause",
-"protocol": "http",
-"host": [
-"127",
-"0",
-"0",
-"1"
-],
-"port": "8080",
-"path": [
-"v1.0",
-"containers",
-":id",
-"pause"
-]
-},
-"description": "Pause the container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/unpause",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815:8080/containers/:id/unpause",
-"protocol": "http",
-"host": [
-"127",
-"0",
-"0",
-"1"
-],
-"port": "8080",
-"path": [
-"containers",
-":id",
-"unpause"
-]
-},
-"description": "Unpause the container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id",
-"request": {
-"method": "DELETE",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id"
-]
-},
-"description": "Deleting containers"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stats",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815:8080/_ping",
-"protocol": "http",
-"host": [
-"127",
-"0",
-"0",
-"1"
-],
-"port": "8080",
-"path": [
-"_ping"
-]
-},
-"description": "Return of statistics about containers"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/prune",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/prune",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-"prune"
-]
-},
-"description": "Deleting frozen containers"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/images/json",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/images/json",
-"protocol": "http",
-"host": [
-"127",
-"0",
-"0",
-"1"
-],
-"port": "8080",
-"path": [
-"images",
-"json"
-]
-},
-"description": "Returns a list of images on the SRV server"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/json",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/json?all=1&limit=90&filters",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-"json"
-],
-"query": [
-{
-"key": "all",
-"value": "1"
-},
-{
-"key": "limit",
-"value": "90"
-},
-{
-"key": "filters",
-"value": null
-}
-]
-},
-"description": "Returns the configuration of the list of containers"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/json",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/json",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"json"
-]
-},
-"description": "Returns configurations from a container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/logs",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/logs",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"logs"
-]
-},
-"description": "Returns logs from a container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/top",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/top?ps_args=",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"top"
-],
-"query": [
-{
-"key": "ps_args",
-"value": ""
-}
-]
-},
-"description": "Returns the number of processes in a container."
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/exec",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/exec?path=/etc/supervisor/conf.d/exec.sh&argument=firefox www.google.pl",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"exec"
-],
-"query": [
-{
-"key": "path",
-"value": "/etc/supervisor/conf.d/exec.sh"
-},
-{
-"key": "argument",
-"value": "firefox www.google.pl"
-}
-]
-},
-"description": "Execution of any command in a container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/create",
-"request": {
-"method": "POST",
-"header": [
-{
-"key": "Content-Type",
-"name": "Content-Type",
-"value": "application/json",
-"type": "text"
-}
-],
-"body": {
-"mode": "raw",
-"raw": "{\r\n  \"Image\": \"srv:1.5\",\r\n  \"ExposedPorts\": {\r\n    \"8080/tcp\": {}\r\n  },\r\n  \"HostConfig\": {\r\n    \"PortBindings\": {\r\n      \"8080/tcp\": [\r\n        {\r\n          \"HostPort\": \"8081\"\r\n        }\r\n      ]\r\n    },\r\n    \"RestartPolicy\": {\r\n      \"Name\": \"always\"\r\n    }\r\n  }\r\n}"
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/create?name",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-"create"
-],
-"query": [
-{
-"key": "name",
-"value": null
-}
-]
-},
-"description": "Creating a new container."
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/start",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/start",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"start"
-]
-},
-"description": "Launching the container."
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stop",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": ""
-},
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stop",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"containers",
-":id",
-"stop"
-]
-},
-"description": "Stopping of the container"
-},
-"response": []
-},
-{
-"name": "http://waw1.simplemethod.io:4815/v1.0/info",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "http://waw1.simplemethod.io:4815/v1.0/info",
-"protocol": "http",
-"host": [
-"145",
-"239",
-"31",
-"229"
-],
-"port": "4815",
-"path": [
-"v1.0",
-"info"
-]
-}
-},
-"response": []
-}
-]
+	"info": {
+		"_postman_id": "e59428e9-9f12-4170-9d8f-335834115b2d",
+		"name": "Internal SRV API",
+		"description": "Internal API of the SRV project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/_ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/_ping",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"_ping"
+					]
+				},
+				"description": "Checking if the server is working"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/kill",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"kill"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Removal of the container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/restart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/restart",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"restart"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "35d06ea40558"
+						}
+					]
+				},
+				"description": "Container restarting"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/pause",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/pause",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"pause"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Pause the container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/unpause",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/unpause",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"unpause"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Unpause the container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Deleting containers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stats",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"stats"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Return of statistics about containers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/prune",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/prune",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						"prune"
+					]
+				},
+				"description": "Deleting frozen containers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/images/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/images/json",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"images",
+						"json"
+					]
+				},
+				"description": "Returns a list of images on the SRV server"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/json?all=1&limit=90&filters",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						"json"
+					],
+					"query": [
+						{
+							"key": "all",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "90"
+						},
+						{
+							"key": "filters",
+							"value": null
+						}
+					]
+				},
+				"description": "Returns the configuration of the list of containers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/json",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns configurations from a container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/logs",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"logs"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns logs from a container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/top",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/top?ps_args=",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"top"
+					],
+					"query": [
+						{
+							"key": "ps_args",
+							"value": ""
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns the number of processes in a container."
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/exec",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/exec?path=/etc/supervisor/conf.d/exec.sh&argument=firefox www.google.pl",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"exec"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/etc/supervisor/conf.d/exec.sh"
+						},
+						{
+							"key": "argument",
+							"value": "firefox www.google.pl"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Execution of any command in a container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Image\": \"srv:1.5\",\r\n  \"ExposedPorts\": {\r\n    \"8080/tcp\": {}\r\n  },\r\n  \"HostConfig\": {\r\n    \"PortBindings\": {\r\n      \"8080/tcp\": [\r\n        {\r\n          \"HostPort\": \"8081\"\r\n        }\r\n      ]\r\n    },\r\n    \"RestartPolicy\": {\r\n      \"Name\": \"always\"\r\n    }\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/create?name",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null
+						}
+					]
+				},
+				"description": "Creating a new container."
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/start",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/start",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"start"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Launching the container."
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/stop",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"containers",
+						":id",
+						"stop"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Stopping of the container"
+			},
+			"response": []
+		},
+		{
+			"name": "http://waw1.simplemethod.io:4815/v1.0/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/info",
+					"protocol": "http",
+					"host": [
+						"waw1",
+						"simplemethod",
+						"io"
+					],
+					"port": "4815",
+					"path": [
+						"v1.0",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
