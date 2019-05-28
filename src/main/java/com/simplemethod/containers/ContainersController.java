@@ -22,6 +22,18 @@ public class ContainersController {
     public ContainersController() {
     }
 
+
+    public String[] systemInformation() {
+        String[] returnArray;
+        returnArray = connectionAPI.getSystemInformation();
+        if (returnArray[0].equals(String.valueOf(200))) {
+            return returnArray;
+        } else {
+            logger.error("[" + returnArray[0] + "] " + returnArray[2]);
+            return returnArray;
+        }
+    }
+
     public String[] containersPing() {
         String[] returnArray;
         returnArray = connectionAPI.containersPing();
@@ -37,7 +49,6 @@ public class ContainersController {
     public String[] containersJson(boolean all, int limit, String filters) throws NullPointerException {
         String[] returnArray;
         returnArray = connectionAPI.containersJson(all, limit, filters);
-
         if (returnArray[0].equals(String.valueOf(200))) {
             return returnArray;
         } else {

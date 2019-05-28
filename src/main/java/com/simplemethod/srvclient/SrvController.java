@@ -73,6 +73,24 @@ public class SrvController {
 
 
 
+
+    @GetMapping(path = "/info")
+    public @ResponseBody
+    ResponseEntity<String> systemInformation() {
+
+        String[] returnArray = new String[3];
+        try {
+
+            returnArray = containersController.systemInformation();
+
+        } catch (NullPointerException e) {
+
+        }
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+        return new ResponseEntity<>(returnArray[2], headers, HttpStatus.valueOf(Integer.valueOf(returnArray[0])));
+    }
+
     @GetMapping(path = "/_ping")
     public @ResponseBody
     ResponseEntity<String> containersPing() {

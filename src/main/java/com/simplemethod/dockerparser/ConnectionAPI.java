@@ -8,6 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -64,6 +66,7 @@ public class ConnectionAPI {
                     .queryString("all", all)
                     .queryString("limit", limit)
                     .queryString("filters", filters)
+                    .queryString("size",true)
                     .asJson();
             returnArray[0] = String.valueOf(containersResponse.getStatus());
             returnArray[1] = containersResponse.getHeaders().toString();
@@ -75,6 +78,33 @@ public class ConnectionAPI {
         }
     }
 
+    /**
+     * https://docs.docker.com/engine/api/v1.39/#operation/SystemInfo
+     */
+    public String[] getSystemInformation() {
+        String[] returnArray = new String[3];
+        JSONParser parser = new JSONParser();
+        org.json.JSONObject body = new org.json.JSONObject();
+        Object obj = null;
+        try {
+            HttpResponse<JsonNode> systemInfo = Unirest.get(DOCKER_SOCKET+"/info").asJson();
+            obj = parser.parse(systemInfo.getBody().toString());
+            org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) obj;
+            body.put("Containers",jsonObject.get("Containers") );
+            body.put("ContainersRunning",jsonObject.get("ContainersRunning"));
+            body.put("ContainersPaused",jsonObject.get("ContainersPaused"));
+            body.put("ContainersStopped",jsonObject.get("ContainersStopped"));
+            body.put("Images",jsonObject.get("Images"));
+            body.put("MemTotal",jsonObject.get("MemTotal"));
+            returnArray[0] = String.valueOf(systemInfo.getStatus());
+            returnArray[1] = systemInfo.getHeaders().toString();
+            returnArray[2] = body.toString();
+            return returnArray;
+        } catch ( NullPointerException | ParseException | org.json.JSONException |  UnirestException e) {
+            logger.error("Cannot connect to the server.");
+            return ReturnErrors();
+        }
+    }
     /**
      * https://docs.docker.com/engine/api/v1.39/#operation/ContainerList
      */
@@ -89,7 +119,7 @@ public class ConnectionAPI {
         String[] returnArray = new String[3];
         try {
             HttpResponse<JsonNode> containersResponse = Unirest.get(DOCKER_SOCKET + "/containers/" + id + "/json")
-                    .header("accept", "application/json").header("Content-Type", "application/json").asJson();
+                    .header("accept", "application/json").queryString("size",true).header("Content-Type", "application/json").asJson();
             returnArray[0] = String.valueOf(containersResponse.getStatus());
             returnArray[1] = containersResponse.getHeaders().toString();
             returnArray[2] = containersResponse.getBody().toString();
@@ -416,19 +446,4 @@ public class ConnectionAPI {
         }
     }
 
-
-    public String shouldReturnStatusOkay() {
-        HttpResponse<JsonNode> japierdole = null;
-        try {
-            japierdole = Unirest.get(" http://192.168.1.55:2137/containers/json")
-                    .header("accept", "application/json").header("Content-Type", "application/json")
-                    .queryString("apiKey", "123").asJson();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        System.out.println(japierdole.getStatus());
-        JSONArray jsonObj = new JSONArray(japierdole.getBody().toString());
-        System.out.println(jsonObj.getJSONObject(0).getString("Id"));
-        return japierdole.getBody().toString();
-    }
 }
