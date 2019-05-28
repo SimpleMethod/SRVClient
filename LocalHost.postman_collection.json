@@ -99,7 +99,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/v1.0/containers/:id/pause",
+					"raw": "http://waw1.simplemethod.io:4815/v1.0/containers/:id/pause",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -129,7 +129,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/containers/:id/unpause",
+					"raw": "http://waw1.simplemethod.io:4815/containers/:id/unpause",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -183,7 +183,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8080/_ping",
+					"raw": "http://waw1.simplemethod.io:4815/_ping",
 					"protocol": "http",
 					"host": [
 						"127",
